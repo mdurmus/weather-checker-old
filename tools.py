@@ -24,3 +24,15 @@ def Get_Email():
             return email
         else:
             print('Please enter a valid email address, for example: xxx@xxx.com')
+
+def Show_Map_Hint():
+   need_help = input('Please type Yes or No and press return key ')
+   if need_help =='Yes':
+       print()
+       print('Open the Google maps service. Find the place you want to go on the map. When you click the right mouse button on the place you want to go, you will see two decimal numbers at the top of the menu that opens, these are the numbers I want from you. For example: 53.298185248091954, -6.178650603203118')
+       print()
+       print('For more information please visit: https://support.google.com/maps/answer/18539?hl=en&co=GENIE.Platform%3DDesktop')
+   else:
+    print()
+    print('Good sound! I\'m dealing with an intelligent man.')
+        
