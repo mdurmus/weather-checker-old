@@ -4,9 +4,8 @@ class Person:
     '''
     Here I am creating the user object to be used in the system.
     '''
-    def __init__(self,person_name,person_surname,person_email):
+    def __init__(self,person_name,person_email):
         self.person_name = person_name
-        self.person_surname=person_surname
         self.person_email=person_email
         self.cities = []
         
