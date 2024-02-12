@@ -34,5 +34,5 @@ def Show_Map_Hint():
        print('For more information please visit: https://support.google.com/maps/answer/18539?hl=en&co=GENIE.Platform%3DDesktop')
    else:
     print()
-    print('Good sound! I\'m dealing with an intelligent man.')
+    print('Good sound!')
         
