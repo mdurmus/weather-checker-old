@@ -1,5 +1,7 @@
 from person import Person, City
-from tools import Get_Name, Get_Email, Show_Map_Hint, Get_City_Information
+from tools import Get_Name, Get_Email, Show_Map_Hint, Convert_Date_Time, Get_City_Information
+
+
 
 print('Welcome to the weather report generator!')
 print()
@@ -17,4 +19,12 @@ Show_Map_Hint()
 print('Ok now can continue...')
 
 city_count = int(input('How many cities do you want to add? '))
-Get_City_Information(city_count)
+
+cities = Get_City_Information(city_count)
+print()
+print('##################################')
+print('Here is the weather list for the locations you want to visit!')
+for city in cities:
+    print(f"City: {city.city_name}\rPostal Code: {city.postal_code}\r")
+print()
+print('##################################')

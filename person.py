@@ -16,9 +16,13 @@ class City:
     '''
     I will keep the destination city and weather information here.
     '''
-    def __init__(self,city_name, arrival_date, weather, celsius):
+    def __init__(self,city_name,latitude,longitude, arrival_date, weather, celsius,kelvin,postal_code):
         self.city_name = city_name
+        self.latitude = latitude
+        self.longitude = longitude
         self.arrival_date = arrival_date
         self.weather = weather
         self.celsius = celsius
+        self.kelvin = kelvin
+        self.postal_code = postal_code
 
