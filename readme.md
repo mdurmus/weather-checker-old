@@ -6,7 +6,7 @@ All you have to do is specify the locations you want to go to. Weather Checker w
 
 # Live link here
 
-
+<img src="docs/images/welcome.webp" alt="Welcome Screen">
 
 
 
