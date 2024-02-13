@@ -1,8 +1,6 @@
 from person import Person, City
 from tools import Get_Name, Get_Email, Show_Map_Hint, Get_City_Information, Show_All_Route
 
-
-
 print('Welcome to the weather report generator!')
 print()
 name = Get_Name()
@@ -23,3 +21,12 @@ city_count = int(input('How many cities do you want to add? '))
 
 cities = Get_City_Information(city_count)
 Show_All_Route(cities)
+
+mail_result = input('Do you want me to send this information to your e-mail address? Y/N ').upper()
+
+if mail_result == 'Y':
+    print('Gönderiyorum...')
+else:
+    print('Proje bitti.')
+
+
