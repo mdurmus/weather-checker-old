@@ -1,8 +1,6 @@
-
-
 class Person:
     '''
-    Here I am creating the user object to be used in the system.
+    This class defining the person object
     '''
     def __init__(self,person_name,person_email):
         self.person_name = person_name
@@ -14,7 +12,7 @@ class Person:
     
 class City:
     '''
-    I will keep the destination city and weather information here.
+    The class object that defines the target 
     '''
     def __init__(self,city_name,latitude,longitude, arrival_date, weather, celsius,kelvin,postal_code,country):
         self.country = country
