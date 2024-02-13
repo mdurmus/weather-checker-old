@@ -1,5 +1,8 @@
 import re
 import requests
+import smtplib
+
+from email.mime.text import MIMEText
 from person import City
 from geopy.geocoders import Nominatim
 from datetime import datetime
@@ -142,6 +145,24 @@ def Show_All_Route(cities):
     print('##################################')
     print()
     
-    
-    
+def Send_Mail(cities,person):
+       subject = f"Hello {person.person_name}, report from Weather Reporter"
+       body = "The locations and weather conditions you want to go to: \n "
+       for city in cities:
+           text = f"City: {city.city_name}\nPostal Code: {city.postal_code}\nCountry: {city.country}\nLatitude: {city.latitude}\nLongitude: {city.longitude}\nArrival Date: {city.arrival_date}\nWeather: {city.weather}\nCelsius: {city.celsius}°C\nKelvin: {city.kelvin}K\n-----------\n"
+           body += text
+       password = "ZXCsdfert456_"
+       receiver = person.person_email
+       sender = "kontakt@mehmetdurmus.de"
+       
+       msg = MIMEText(body)
+       msg['Subject'] = subject
+       msg['From'] = sender
+       msg['To'] = receiver
+       
+       with smtplib.SMTP_SSL('mail.your-server.de',465) as smtp_server : 
+           smtp_server.login(sender,password)
+           smtp_server.sendmail(sender,receiver, msg.as_string())
+
+       print('All reports are in your account, check your mailbox...')
     

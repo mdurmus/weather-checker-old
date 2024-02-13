@@ -1,5 +1,5 @@
 from person import Person, City
-from tools import Get_Name, Get_Email, Show_Map_Hint, Get_City_Information, Show_All_Route
+from tools import Get_Name, Get_Email, Show_Map_Hint, Get_City_Information, Show_All_Route,Send_Mail
 
 print('Welcome to the weather report generator!')
 print()
@@ -25,8 +25,8 @@ Show_All_Route(cities)
 mail_result = input('Do you want me to send this information to your e-mail address? Y/N ').upper()
 
 if mail_result == 'Y':
-    print('Gönderiyorum...')
+    Send_Mail(cities,person)
 else:
-    print('Proje bitti.')
+    print('See you again!')
 
 
