@@ -52,7 +52,7 @@ def Get_City_Information(city_count):
     city_list = []
     for i in range(city_count):
        city_data= Get_Latitude_Longitude(i)
-       name = f'City {i}'
+       name = f'{i+1}'
        arrival_date = input('Enter arrival date (YYYY-MM-DD): ')
        time_stamp = Convert_Date_Time(arrival_date)
        weather_data = Get_Weather_Info(city_data[0],city_data[1],time_stamp)
@@ -60,7 +60,7 @@ def Get_City_Information(city_count):
        weather = weather_data['description']
        celcius = kelvin_to_celcius_convert(kelvin)
        
-       city = City(name,city_data[0],city_data[1],arrival_date,weather,celcius,kelvin,city_data[2])
+       city = City(name,city_data[0],city_data[1],arrival_date,weather,celcius,kelvin,city_data[2],city_data[3])
        city_list.append(city)
     
     return city_list
@@ -88,17 +88,17 @@ def Get_Latitude_Longitude(city_no):
         print(location.address)
         
         post_code = location.raw['address']['postcode']
+        country = location.raw['address']['country']
         
         city_result = input('Is this correct city? Y/N ').upper()
         
         if city_result == 'Y':
             print('City added.')
-            return (latitude,longitude,post_code)
+            return (latitude,longitude,post_code,country)
         elif city_result == 'N':
             print('Please enter another latitude/longitude data.')
         else:
-            print('Invalid input!')
-            
+            print('Invalid input!')           
             
 def Get_Weather_Info(latitude,longitude,date):
     '''
@@ -131,4 +131,17 @@ def Convert_Date_Time(date):
     api_format = int(date.timestamp())
     return api_format
 
-
+def Show_All_Route(cities):
+    print()
+    print('##################################')
+    print()
+    print('Here is the weather list for the locations you want to visit!')
+    print()
+    for city in cities:
+        print(f"City: {city.city_name}\nPostal Code: {city.postal_code}\nCountry: {city.country}\nLatitude: {city.latitude}\nLongitude: {city.longitude}\nArrival Date: {city.arrival_date}\nWeather: {city.weather}\nCelsius: {city.celsius}°C\nKelvin: {city.kelvin}K\n-----------")
+    print('##################################')
+    print()
+    
+    
+    
+    
