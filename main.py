@@ -1,8 +1,10 @@
-from person import Person, City
+import pyfiglet
+from person import Person
 from tools import Get_Name, Get_Email, Show_Map_Hint, Get_City_Information, Show_All_Route,Send_Mail
+welcome_text = 'Weather Checker!'
 
-print()
-print('Welcome to the weather report generator!')
+banner = pyfiglet.figlet_format(welcome_text)
+print(banner)
 
 # Method that retrieves the user's name. 
 name = Get_Name()
