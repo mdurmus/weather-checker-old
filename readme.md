@@ -1,14 +1,18 @@
-# Weather Checker
+<h1>Weather Checker</h1>
 
 Maybe it's a business trip or a vacation trip or a picnic trip, if you are traveling somewhere and want to know the weather forecast of your destination. Weather Checker will help you. What's more, you can send this information to your email address or a friend's email address!
 
 All you have to do is specify the locations you want to go to. Weather Checker will do everything else for you with its user-friendly screens. The locations you want to go to are easily and safely determined thanks to the Google Maps infrastructure. You get real information thanks to Openweather api support. 
 
-# Live link here
+<h1 style="color:red;"> Live link here</h1>
 
 <img src="docs/images/welcome.webp" alt="Welcome Screen">
 
+<h2> How to Use </h2>
 
+<ul>
+<li>Kullanicinin bir mail adresi olmasi lazim.</li>
+</ul>
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
