@@ -16,6 +16,14 @@ All you have to do is specify the locations you want to go to. Weather Checker w
 <li>The user must specify the date of departure.</li>
 </ul>
 
+<h2>Site Owners Goal</h2>
+
+<ul>
+<li>To enable its users to easily access the information they want.</li>
+<li>Providing users with an easy-to-use application.</li>
+<li></li>
+</ul>
+
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
 
