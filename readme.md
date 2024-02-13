@@ -11,7 +11,9 @@ All you have to do is specify the locations you want to go to. Weather Checker w
 <h2> How to Use </h2>
 
 <ul>
-<li>Kullanicinin bir mail adresi olmasi lazim.</li>
+<li>The user must have an email address to receive reports.</li>
+<li>The user needs to set the targets (latitude and longitude).</li>
+<li>The user must specify the date of departure.</li>
 </ul>
 
 
