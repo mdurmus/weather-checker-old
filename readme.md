@@ -100,10 +100,33 @@ The entered coordinate information is queried with the api service of Geopy serv
 
 If the user thinks that the address information is incorrect, he/she can type N and re-enter the information or Y to continue the program execution. If the user has specified that he/she wants to go to more than one location, the coordinate information of all cities and the date to be traveled are asked on this screen. 
 
+<img src="docs/images/city_added.webp" alt="Latitude longitude validation">
 
+### Added Trip Date
 
+After entering the location information, the travel date must be entered. 
 
+<img src="docs/images/date.webp" alt="Trip date">
 
+### Summary Screen
+
+Once all the information has been entered, the user will be presented with a summary screen as follows.
+
+<img src="docs/images/date.webp" alt="Summary screen">
+
+### Report Screen
+
+<img src="docs/images/report.webp" alt="Summary screen">
+
+The user is asked if they want the information by mail. If the user wants to receive the information by e-mail, it will be sent to the e-mail address they have typed.
+
+<img src="docs/images/mail.webp" alt="Summary screen">
+
+### Mail Report
+
+The report e-mail sent to the e-mail address entered in the system is as follows. 
+
+<img src="docs/images/mail_full.webp" alt="Mail screen">
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
 

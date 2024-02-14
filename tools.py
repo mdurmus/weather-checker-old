@@ -63,6 +63,7 @@ def Get_City_Information(city_count):
        # I used a tuple to store the city information.
        city_data= Get_Latitude_Longitude(i)
        name = f'{i+1}'
+       print()
        arrival_date = input('Enter arrival date (YYYY-MM-DD): ')
        # I converted the date because the Openweather API works with unix datetime.
        time_stamp = Convert_Date_Time(arrival_date)
@@ -120,6 +121,7 @@ def Get_Latitude_Longitude(city_no):
         print()
         city_result = input('Is this correct city? Y/N ').upper()
         if city_result == 'Y':
+            print()
             print('City added.')
             return (latitude,longitude,post_code,country)
         elif city_result == 'N':
