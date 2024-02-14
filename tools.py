@@ -16,11 +16,10 @@ def Get_Name():
         name = input('What is your name? ')
         #I use it to verify that the information entered is only alphanumeric characters
         if name.isalpha():
-            print(f'Welcome {name} \n')
+            print(f'\nWelcome {name} \n')
             return name
         else:
             print('\nPlease enter valid name (only alpha characters) and one word!\n')
-
             
 def Get_Email():
     '''
@@ -34,7 +33,7 @@ def Get_Email():
         if match:
             return email
         else:
-            print('Please enter a valid email address, for example: xxx@xxx.com')
+            print('\nPlease enter a valid email address, for example: xxx@xxx.com\n')
 
 def Show_Map_Hint():
     '''
