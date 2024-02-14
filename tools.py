@@ -86,12 +86,14 @@ def kelvin_to_celcius_convert(kelvin):
        
 def Check_Latitude_Longitude(type, city_no):
     while True:
+        data = input(f"Please paste  {city_no}. city {type} value:")
+        if '.' not in data:
+            print("Please enter a dotted float value!")
         try:
-            print()
-            data = float(input(f"Please paste  {city_no}. city {type} value:"))
+            data = float(data)
             return data
         except ValueError:
-            print("Please enter only float value")
+            print("The value you entered is not in the required format, please check and try again")
 
 def Get_Latitude_Longitude(city_no):
     '''
