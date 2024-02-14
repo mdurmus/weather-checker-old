@@ -1,7 +1,7 @@
 import pyfiglet
 from person import Person
 from tools import get_name, get_email, show_map_hint 
-from tools import get_location_information, Show_All_Route,Send_Mail
+from tools import get_location_information, show_all_route,send_mail
 welcome_text = 'Weather Checker!'
 
 banner = pyfiglet.figlet_format(welcome_text)
@@ -42,16 +42,17 @@ while True:
 
 # Method that asks for the number of cities specified by the user one by one
 locations = get_location_information(location_count)
+person.locations = locations
 
 # Method that shows all the cities entered by the user with all relevant information.
-Show_All_Route(locations)
+show_all_route(person.locations)
 
 
 mail_result = input('Do you want me to send this information to your email address? Y / N ').upper()
 
 if mail_result == 'Y':
     # If user want, this method send all information to user as e-mail
-    Send_Mail(locations,person)
+    send_mail(person)
 else:
     print('See you again!')
 

@@ -155,8 +155,31 @@ With the converted date information, latitude and longitude information, queries
 
 This data is shown to the user after completing the steps for all relevant locations. If this data is to be sent as an e-mail, it is ensured that it is sent with the relevant methods in the email library and TLS security. 
 
+## Testing
 
+### PEP8 Testing
 
+The python files have all been passed through [PEP8 Online](https://www.pythonchecker.com/). All python files were checked with no errors reported. See screen show below:
+
+<details>
+<summary>main.py</summary>
+<img src="docs/images/mainpy.webp" alt="Main Module">
+</details>
+
+<details>
+<summary>person.py</summary>
+<img src="docs/images/personpy.webp" alt="Person Module">
+</details>
+
+<details>
+<summary>location.py</summary>
+<img src="docs/images/location.webp" alt="Location Module">
+</details>
+
+<details>
+<summary>tools.py</summary>
+<img src="docs/images/tools.webp" alt="Tools Module">
+</details>
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
