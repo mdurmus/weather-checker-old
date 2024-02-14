@@ -128,6 +128,13 @@ The report e-mail sent to the e-mail address entered in the system is as follows
 
 <img src="docs/images/mail_full.webp" alt="Mail screen">
 
+## Data Model
+
+I used principles of Object-Oriented Programming throughout this project. The Word-Py game consists of three classes:
+
+-
+
+
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
 
 regex -> fullmatch -> https://www.geeksforgeeks.org/re-fullmatch-function-in-python/
