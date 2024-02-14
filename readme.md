@@ -77,9 +77,15 @@ If the user asks for help, an explanation of how to use the Google Maps service 
 
 <img src="docs/images/help_screen.webp" alt="Maps Tip">
 
+### Add location
+
 If the user does not ask for help, the program will ask how many cities they would like to receive a report about.
 
 <img src="docs/images/no_help.webp" alt="Maps Tip">
+
+At this point we expect our user to specify how many cities to add with a number. And of course we need to check the entered expression. If it is entered incorrectly: 
+
+<img src="docs/images/loc_val.webp" alt="Location Validation">
 
 
 

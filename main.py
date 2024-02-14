@@ -31,7 +31,9 @@ while True:
         city_count = int(input('How many cities do you want to add? '))
         break
     except ValueError:
+        print()
         print('Please enter only numeric value!')
+        print()
 
 # Method that asks for the number of cities specified by the user one by one
 cities = Get_City_Information(city_count)
