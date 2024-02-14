@@ -1,10 +1,10 @@
 import re
 import requests
 import smtplib
-import pyfiglet
 
+
+from location import Location
 from email.mime.text import MIMEText
-from person import City
 from geopy.geocoders import Nominatim
 from datetime import datetime
 
@@ -52,30 +52,30 @@ def Show_Map_Hint():
      print()
     print('Good sound!')
 
-def Get_City_Information(city_count):
+def Get_Location_Information(location_count):
     '''
     Method that gets the city information to be added to the system from the user and creates an object.
     '''
     # I create a city list item.
-    city_list = []
+    location_list = []
     # I create a loop with the number of cities entered by the user.
-    for i in range(city_count):
+    for i in range(location_count):
        # I used a tuple to store the city information.
-       city_data= Get_Latitude_Longitude(i)
+       location_data= Get_Latitude_Longitude(i)
        name = f'{i+1}'
        print()
        arrival_date = input('Enter arrival date (YYYY-MM-DD): ')
        # I converted the date because the Openweather API works with unix datetime.
        time_stamp = Convert_Date_Time(arrival_date)
-       weather_data = Get_Weather_Info(city_data[0],city_data[1],time_stamp)
+       weather_data = Get_Weather_Info(location_data[0],location_data[1],time_stamp)
        kelvin = weather_data['temperature']
        weather = weather_data['description']
        celcius = kelvin_to_celcius_convert(kelvin)
        # I create a city object
-       city = City(name,city_data[0],city_data[1],arrival_date,weather,celcius,kelvin,city_data[2],city_data[3])
-       city_list.append(city)
+       location = Location(name,location_data[0],location_data[1],arrival_date,weather,celcius,kelvin,location_data[2],location_data[3])
+       location_list.append(location)
     
-    return city_list
+    return location_list
 
 def kelvin_to_celcius_convert(kelvin):
     '''
@@ -85,12 +85,12 @@ def kelvin_to_celcius_convert(kelvin):
     celcius_format = "{:.1f}".format(celcius)
     return celcius_format
        
-def Check_Latitude_Longitude(type, city_no):
+def Check_Latitude_Longitude(type, location_no):
     '''
     Method that allows the user to enter the actual latitude and longitude
     '''
     while True:
-        data = input(f"Please paste  {city_no}. city {type} value:")
+        data = input(f"Please paste  {location_no}. city {type} value: ")
         if '.' not in data:
             print("Please enter a dotted float value!")
         try:
@@ -99,17 +99,17 @@ def Check_Latitude_Longitude(type, city_no):
         except ValueError:
             print("The value you entered is not in the required format, please check and try again")
 
-def Get_Latitude_Longitude(city_no):
+def Get_Latitude_Longitude(location_no):
     '''
     Method to verify entered coordinates
     '''
-    city_no +=1
+    location_no +=1
     while True:
         print()
         
-        latitude = Check_Latitude_Longitude('latitude',city_no)
+        latitude = Check_Latitude_Longitude('latitude',location_no)
        
-        longitude = Check_Latitude_Longitude('longitude',city_no)
+        longitude = Check_Latitude_Longitude('longitude',location_no)
         
         print()
         geolocator = Nominatim(user_agent="demo")
@@ -119,12 +119,12 @@ def Get_Latitude_Longitude(city_no):
         post_code = location.raw['address']['postcode']
         country = location.raw['address']['country']
         print()
-        city_result = input('Is this correct city? Y/N ').upper()
-        if city_result == 'Y':
+        location_result = input('Is this correct city? Y/N ').upper()
+        if location_result == 'Y':
             print()
-            print('City added.')
+            print('Location added.')
             return (latitude,longitude,post_code,country)
-        elif city_result == 'N':
+        elif location_result == 'N':
             print('\nPlease enter another latitude/longitude data.')
         else:
             print('Invalid input!')           
@@ -155,22 +155,22 @@ def Convert_Date_Time(date):
     api_format = int(date.timestamp())
     return api_format
 
-def Show_All_Route(cities):
+def Show_All_Route(locations):
     print()
     print('##################################')
     print()
     print('Here is the weather list for the locations you want to visit!')
     print()
-    for city in cities:
-        print(f"Location: {city.city_name}\nPostal Code: {city.postal_code}\nCountry: {city.country}\nLatitude: {city.latitude}\nLongitude: {city.longitude}\nArrival Date: {city.arrival_date}\nWeather: {city.weather}\nCelsius: {city.celsius}°C\nKelvin: {city.kelvin}K\n")
+    for location in locations:
+        print(f"Location: {location.location_name}\nPostal Code: {location.postal_code}\nCountry: {location.country}\nLatitude: {location.latitude}\nLongitude: {location.longitude}\nArrival Date: {location.arrival_date}\nWeather: {location.weather}\nCelsius: {location.celsius}°C\nKelvin: {location.kelvin}K\n")
     print('##################################')
     print()
     
-def Send_Mail(cities,person):
+def Send_Mail(locations,person):
        subject = f"Hello {person.person_name}, report from Weather Reporter"
        body = "The locations and weather conditions you want to go to: \n "
-       for city in cities:
-           text = f"Location: {city.city_name}\nPostal Code: {city.postal_code}\nCountry: {city.country}\nLatitude: {city.latitude}\nLongitude: {city.longitude}\nArrival Date: {city.arrival_date}\nWeather: {city.weather}\nCelsius: {city.celsius}°C\nKelvin: {city.kelvin}K\n-----------\n"
+       for location in locations:
+           text = f"Location: {location.location_name}\nPostal Code: {location.postal_code}\nCountry: {location.country}\nLatitude: {location.latitude}\nLongitude: {location.longitude}\nArrival Date: {location.arrival_date}\nWeather: {location.weather}\nCelsius: {location.celsius}°C\nKelvin: {location.kelvin}K\n-----------\n"
            body += text
        password = "ZXCsdfert456_"
        receiver = person.person_email
@@ -185,5 +185,5 @@ def Send_Mail(cities,person):
            smtp_server.login(sender,password)
            smtp_server.sendmail(sender,receiver, msg.as_string())
 
-       print('All reports sended your email, please check your mailbox...')
+       print('Weather report sended your email, please check your mailbox...')
     
