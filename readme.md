@@ -95,6 +95,9 @@ The entered coordinate information is queried with the api service of Geopy serv
 
 <img src="docs/images/lat_long_validation.webp" alt="Latitude longitude validation">
 
+<img src="docs/images/lat_long_validation2.webp" alt="Latitude longitude validation">
+
+
 If the user thinks that the address information is incorrect, he/she can type N and re-enter the information or Y to continue the program execution. If the user has specified that he/she wants to go to more than one location, the coordinate information of all cities and the date to be traveled are asked on this screen. 
 
 
