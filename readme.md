@@ -43,11 +43,15 @@ Starting to design my project with a flowchart has helped me a lot. First, these
 
 ## Features
 
-### Title and Introduction Section
+### Welcome Section
 
 When the user enters the application they are greeted with a very simple page welcoming them to the game and asking them for their name. The welcome text was created using Pyfiglet which takes ASCII text and renders it into ASCII art fonts.
 
 <img src="docs/images/welcome.webp" alt="Introduction">
+
+Username entry has strong data validation. The user cannot enter a name with numbers or spaces in it. If they do not enter valid data, the message "Please enter valid name (only alpha characters) and one word!" is displayed.   
+
+<img src="docs/images/name_validation.webp" alt="Name Validation">
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha

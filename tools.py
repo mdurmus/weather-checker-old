@@ -1,6 +1,7 @@
 import re
 import requests
 import smtplib
+import pyfiglet
 
 from email.mime.text import MIMEText
 from person import City
@@ -18,7 +19,8 @@ def Get_Name():
             print(f'Welcome {name} \n')
             return name
         else:
-            print('Please enter valid name (only alpha characters) and one word!')
+            print('\nPlease enter valid name (only alpha characters) and one word!\n')
+
             
 def Get_Email():
     '''
