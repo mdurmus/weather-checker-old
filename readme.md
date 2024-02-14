@@ -24,6 +24,18 @@ All you have to do is specify the locations you want to go to. Weather Checker w
 <li></li>
 </ul>
 
+<h2>User Benefits</h2>
+
+This program significantly simplifies travel planning for users. They can better plan their travel dates and destinations by getting weather information while determining the route they will travel. In this way, they can take precautions against adverse weather conditions they may encounter while traveling and make their travel experience more enjoyable.
+
+In addition, this program helps users determine their travel routes. Users can identify the cities they want to visit and the activities they will do in those cities. Using weather information, they can plan which activities are more suitable for the dates they will be traveling and what kind of clothes they should wear.
+
+The program helps users save time and resources. They can create their travel routes on a single platform, without the need for external weather apps or websites. This allows users to make travel plans more efficiently and prevents unnecessary time wastage.
+
+Users receive personalized services through the program. They can easily manage their travel plans by receiving travel route and weather information via email. This helps users keep their travel plans updated and makes their travel experience smoother.
+
+Translated with DeepL.com (free version)
+
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
 
