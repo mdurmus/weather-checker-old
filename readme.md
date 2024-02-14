@@ -110,7 +110,7 @@ After entering the location information, the travel date must be entered.
 
 ### Summary Screen
 
-Once all the information has been entered, the user will be presented with a summary screen as follows.
+Once all the information has been entered, the user will be presented with a summary screen as follows. ***Addresses are shown in full as they vary by country.***
 
 <img src="docs/images/date.webp" alt="Summary screen">
 
@@ -118,7 +118,7 @@ Once all the information has been entered, the user will be presented with a sum
 
 <img src="docs/images/report.webp" alt="Summary screen">
 
-The user is asked if they want the information by mail. If the user wants to receive the information by e-mail, it will be sent to the e-mail address they have typed.
+The user is asked if they want the information by mail. If the user wants to receive the information by e-mail, it will be sent to the e-mail address they have typed. 
 
 <img src="docs/images/mail.webp" alt="Summary screen">
 
@@ -203,14 +203,63 @@ All of the above tests were completed in my local terminal and also in the Herok
 
 [pyfiglet](https://pypi.org/project/pyfiglet/) - for taking ASCII text and rendering it into ASCII art fonts.
 
+[requests]() - Requests is an HTTP library, written in Python, for human beings.
 
-isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
+[smtplib]() - SMTP/ESMTP client class.
 
-regex -> fullmatch -> https://www.geeksforgeeks.org/re-fullmatch-function-in-python/
+[geopy](https://pypi.org/project/geopy) - geopy is a Python client for several popular geocoding web services.
 
+[datetime]() - Date time converter
 
-GeoLocation -> geopy 2.4.1  https://pypi.org/project/geopy/
+### Programs Used
 
-Adresler ülkelere göre farkliliklar gösterdigi icin adresler tam olarak gösterilmektedir.
+[GitHub](https://www.github.com) - used for version control.
+[Heroku](https://id.heroku.com/login) - used to deploy the live project.
+[Lucidchart](https://www.lucidchart.com/pages) - used to create the game flowchart
+[PEP8 Checker](https://www.pythonchecker.com/) - used to validate all the Python code
 
-city name -> https://www.geeksforgeeks.org/get-the-city-state-and-country-names-from-latitude-and-longitude-using-python/
+## Creadits
+
+### Resources Used
+
+[W3Schools](https://www.w3schools.com/)
+[Stack Overflow](https://stackoverflow.com/)
+[Code Academy](https://www.codecademy.com/resources/docs/python/strings/isalpha) I got help on how to use the isalpha method
+[geeksforgeeks](https://www.geeksforgeeks.org/re-fullmatch-function-in-python/) - Regex and fullmatch usage
+[pyfiglet](https://pypi.org/project/pyfiglet/) I used it for the big ASCI welcome text on the input screen.
+
+## Deployment
+
+The site was deployed via Heroku, and the live link can be found here: Word-Py
+
+Before deploying to Heroku pip3 freeze > requirements.txt was used to add all the dependencies required to the requirements.txt file. This is required for the game to run on Heroku.
+
+The following steps were then taken:
+
+<ol>
+<li>Log in to Heroku or create an account.</li>
+<li>On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".</li>
+<li>Enter a unique and meaningful app name.</li>
+<li>Next select your region.</li>
+<li>Click on the Create App button.</li>
+<li>Click on the Settings Tab and scroll down to Config Vars.</li>
+<li>Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button.</li>
+<li>Input CREDS and the content of your Google Sheet API creds file as another config var and click add.</li>
+<li>In the next Key box enter OXFORD_API_APP_ID and add your unique ID to the value box.</li>
+<li>In the next Key box enter OXFORD_API_APP_KEY and add your unique key to the value box.</li>
+<li>Next, scroll down to the Buildpack section click Add Buildpack select Python and click Save Changes</li>
+<li>Repeat step 11 to add node.js. Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.</li>
+<li>Scroll to the top of the page and choose the Deploy tab.</li>
+<li>Select Github as the deployment method.</li>
+<li>Confirm you want to connect to GitHub.</li>
+<li>Search for the repository name and click the connect button.</li>
+<li>Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.</li>
+<li>Click View to view the deployed site.</li>
+</ol>
+
+The site is now live and operational.
+
+## Acknowledgments
+The Code Institute slack community for their quick responses and very helpful feedback!
+
+Many thanks to the user [AliOKeeffe](https://github.com/AliOKeeffe/word-Py?tab=readme-ov-file), whose resources I have used extensively during the preparation of this file. 
