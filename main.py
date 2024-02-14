@@ -12,7 +12,7 @@ name = Get_Name()
 # The method that retrieves the user's mail address. 
 mail = Get_Email()
 
-print(f'Ok {name}, now i will prepare your personal data file...\n')
+print(f'\nOk {name}, now i will prepare your personal data file...\n')
 
 # I create person object and fill data
 person = Person(name,mail)

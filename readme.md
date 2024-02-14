@@ -49,9 +49,13 @@ When the user enters the application they are greeted with a very simple page we
 
 <img src="docs/images/welcome.webp" alt="Introduction">
 
+### Name Validation
+
 User name entry has strong data validation. The user cannot enter a name with numbers or spaces in it. If they do not enter valid data, the message "Please enter valid name (only alpha characters) and one word!" is displayed.   
 
 <img src="docs/images/name_validation.webp" alt="Name Validation">
+
+### Email Validation
 
 Once the user has entered their name correctly, they are asked to enter their email address.
 
@@ -61,7 +65,7 @@ The email address entered by the user is checked with a regex structure. In case
 
 <img src="docs/images/email_validation.webp" alt="Email Validation">
 
-
+### Maps Help Section
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
