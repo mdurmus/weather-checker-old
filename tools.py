@@ -85,6 +85,9 @@ def kelvin_to_celcius_convert(kelvin):
     return celcius_format
        
 def Check_Latitude_Longitude(type, city_no):
+    '''
+    Method that allows the user to enter the actual latitude and longitude
+    '''
     while True:
         data = input(f"Please paste  {city_no}. city {type} value:")
         if '.' not in data:
