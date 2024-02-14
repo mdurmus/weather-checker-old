@@ -173,13 +173,35 @@ The python files have all been passed through [PEP8 Online](https://www.pythonch
 
 <details>
 <summary>location.py</summary>
-<img src="docs/images/location.webp" alt="Location Module">
+<img src="docs/images/locationpy.webp" alt="Location Module">
 </details>
 
 <details>
 <summary>tools.py</summary>
-<img src="docs/images/tools.webp" alt="Tools Module">
+<img src="docs/images/toolspy.webp" alt="Tools Module">
 </details>
+
+### Input Testing
+
+At every point where a user enters data, the data entered is checked:
+
+- What is your name? : The user can enter string data consisting of only one word with no numeric characters and without space.
+
+- Please enter your email: This field is tested by checking the mail address format with the regex structure.
+
+- How many cities do you want to add? Only numeric characters can be entered in this field.
+
+- Please paste  x. city latitude value: Expressions with a dot(.) character in this field are allowed and can be converted to float.
+
+- Please paste  x. city longitude value: Expressions with a dot(.) character in this field are allowed and can be converted to float.
+
+All of the above tests were completed in my local terminal and also in the Heroku terminal.
+
+## Libraries and Technologies Used
+
+### Python Libraries
+
+[pyfiglet](https://pypi.org/project/pyfiglet/) - for taking ASCII text and rendering it into ASCII art fonts.
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
