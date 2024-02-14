@@ -41,6 +41,14 @@ Starting to design my project with a flowchart has helped me a lot. First, these
 
 <img src="docs/images/charts.webp" alt="Weather Checker Flow Charts">
 
+## Features
+
+### Title and Introduction Section
+
+When the user enters the application they are greeted with a very simple page welcoming them to the game and asking them for their name. The welcome text was created using Pyfiglet which takes ASCII text and renders it into ASCII art fonts.
+
+<img src="docs/images/welcome.webp" alt="Introduction">
+
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
 
