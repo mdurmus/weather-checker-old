@@ -87,6 +87,17 @@ At this point we expect our user to specify how many cities to add with a number
 
 <img src="docs/images/loc_val.webp" alt="Location Validation">
 
+As many locations as the user enters, it is requested to enter latitude and longitude information first, respectively.
+
+<img src="docs/images/lat_long_enter.webp" alt="Latitude longitude enter">
+
+The entered coordinate information is queried with the api service of Geopy service and the registered address information is displayed to the user.
+
+<img src="docs/images/lat_long_validation.webp" alt="Latitude longitude validation">
+
+If the user thinks that the address information is incorrect, he/she can type N and re-enter the information or Y to continue the program execution. If the user has specified that he/she wants to go to more than one location, the coordinate information of all cities and the date to be traveled are asked on this screen. 
+
+
 
 
 

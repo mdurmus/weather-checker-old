@@ -28,7 +28,7 @@ print('Ok now can continue...\n')
 # I want the user to enter only numeric character.
 while True:
     try:
-        city_count = int(input('How many cities do you want to add? '))
+        city_count = int(input('\nHow many cities do you want to add? '))
         break
     except ValueError:
         print()

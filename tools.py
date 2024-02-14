@@ -84,26 +84,41 @@ def kelvin_to_celcius_convert(kelvin):
     celcius_format = "{:.1f}".format(celcius)
     return celcius_format
        
+def Check_Latitude_Longitude(type, city_no):
+    while True:
+        try:
+            print()
+            data = float(input(f"Please paste  {city_no}. city {type} value:"))
+            return data
+        except ValueError:
+            print("Please enter only float value")
+
 def Get_Latitude_Longitude(city_no):
     '''
     Method to verify entered coordinates
     '''
     city_no +=1
     while True:
-        latitude = input(f'Please paste {city_no}. city  latitude: ')
-        longitude = input(f'Please paste {city_no}. city  longitude: ')
+        print()
+        
+        latitude = Check_Latitude_Longitude('latitude',city_no)
+       
+        longitude = Check_Latitude_Longitude('longitude',city_no)
+        
+        print()
         geolocator = Nominatim(user_agent="demo")
         location = geolocator.reverse(f"{latitude},{longitude}")
         # I wrote the whole address on the screen to be able to verify it.
         print(location.address)
         post_code = location.raw['address']['postcode']
         country = location.raw['address']['country']
+        print()
         city_result = input('Is this correct city? Y/N ').upper()
         if city_result == 'Y':
             print('City added.')
             return (latitude,longitude,post_code,country)
         elif city_result == 'N':
-            print('Please enter another latitude/longitude data.')
+            print('\nPlease enter another latitude/longitude data.')
         else:
             print('Invalid input!')           
             
@@ -141,8 +156,6 @@ def Show_All_Route(cities):
     print()
     for city in cities:
         print(f"Location: {city.city_name}\nPostal Code: {city.postal_code}\nCountry: {city.country}\nLatitude: {city.latitude}\nLongitude: {city.longitude}\nArrival Date: {city.arrival_date}\nWeather: {city.weather}\nCelsius: {city.celsius}°C\nKelvin: {city.kelvin}K\n")
-        if cities.count()>1:
-            print('\n-------------\n')
     print('##################################')
     print()
     
