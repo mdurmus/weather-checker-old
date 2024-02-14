@@ -8,23 +8,31 @@ from email.mime.text import MIMEText
 from geopy.geocoders import Nominatim
 from datetime import datetime
 
-def Get_Name():
+def get_name():
     '''
-    Method that allows the user to enter a real/valid name
+    Method that allows the user to enter a real or valid name
     '''
+    
+    
     while True:
         name = input('What is your name? ')
-        #I use it to verify that the information entered is only alphanumeric characters
+        #I use it to verify that the information entered is 
+        # only alphanumeric characters
         if name.isalpha():
-            print(f'\nWelcome {name} \n')
+            print()
+            print(f'Welcome {name}')
+            print()
             return name
         else:
-            print('\nPlease enter valid name (only alpha characters) and one word!\n')
-            
-def Get_Email():
+            print('\nPlease enter valid name (only alpha characters) and one word!\n')    
+
+
+def get_email():
     '''
     Method that allows the user to enter a valid email
     '''
+
+
     while True:
         # I use regex to make sure that the user enters a real email address.
         email = input('Please enter your email: ')
@@ -33,49 +41,60 @@ def Get_Email():
         if match:
             return email
         else:
-            print('\nPlease enter a valid email address, for example: xxx@xxx.com\n')
+            print()
+            print('Please enter a valid email address, for example: xx@xx.com')
+            print()
 
-def Show_Map_Hint():
+
+def show_map_hint():
     '''
     A method that shows the user how to get latitude and longitude numbers on maps.
     '''
+
+
     print()
     need_help = input('Please type Y or N and press return key. If you press a letter other than Y, the system accept it as N! ')
     need_help = need_help.upper()
     if need_help =='Y':
-       print()
-       print('Open the Google maps service. Find the place you want to go on the map. When you click the right mouse button on the place you want to go, you will see two decimal numbers at the top of the menu that opens, these are the numbers I want from you. For example: 53.298185248091954, -6.178650603203118')
-       print()
-       print('For more information please visit: https://support.google.com/maps/answer/18539?hl=en&co=GENIE.Platform%3DDesktop')
-       print()
+        print()
+        print('Open the Google maps service. Find the place you want to go on the map. When you click the right mouse button on the place you want to go, you will see two decimal numbers at the top of the menu that opens, these are the numbers I want from you. For example: 53.298185248091954, -6.178650603203118')
+        print()
+        print('For more information please visit: https://support.google.com/maps/answer/18539?hl=en&co=GENIE.Platform%3DDesktop')
+        print()
     else:
-     print()
+        print()
     print('Good sound!')
 
-def Get_Location_Information(location_count):
+
+def get_location_information(location_count):
     '''
     Method that gets the city information to be added to the system from the user and creates an object.
     '''
+
+
     # I create a city list item.
     location_list = []
-    # I create a loop with the number of cities entered by the user.
+
+    # I create a loop with the number of cities entered by the user.    
     for i in range(location_count):
-       # I used a tuple to store the city information.
-       location_data= Get_Latitude_Longitude(i)
-       name = f'{i+1}'
-       print()
-       arrival_date = input('Enter arrival date (YYYY-MM-DD): ')
-       # I converted the date because the Openweather API works with unix datetime.
-       time_stamp = Convert_Date_Time(arrival_date)
-       weather_data = Get_Weather_Info(location_data[0],location_data[1],time_stamp)
-       kelvin = weather_data['temperature']
-       weather = weather_data['description']
-       celcius = kelvin_to_celcius_convert(kelvin)
-       # I create a city object
-       location = Location(name,location_data[0],location_data[1],arrival_date,weather,celcius,kelvin,location_data[2],location_data[3])
-       location_list.append(location)
+        # I used a tuple to store the city information.
+        location_data= Get_Latitude_Longitude(i)
+        name = f'{i + 1}'
+        print()
+        arrival_date = input('Enter arrival date (YYYY-MM-DD): ')
+        # I converted the date because the Openweather API works with unix datetime.
+        time_stamp = Convert_Date_Time(arrival_date)
+        weather_data = Get_Weather_Info(location_data[0],location_data[1],time_stamp)
+        kelvin = weather_data['temperature']
+        weather = weather_data['description']
+        celcius = kelvin_to_celcius_convert(kelvin)
+        # I create a city object
+        location = Location(name,location_data[0],location_data[1],arrival_date,weather,celcius,kelvin,location_data[2],location_data[3])
+        location_list.append(location)
     
     return location_list
+
+
 
 def kelvin_to_celcius_convert(kelvin):
     '''

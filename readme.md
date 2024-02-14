@@ -132,7 +132,31 @@ The report e-mail sent to the e-mail address entered in the system is as follows
 
 I used principles of Object-Oriented Programming throughout this project. The Word-Py game consists of three classes:
 
--
+- person.py
+- location.py
+- tools.py
+
+The `Person.py` object is created to store the user's personal information. It has two variables that hold the name to address the user and the e-mail address to send weather reports if desired. 
+
+
+The `Location.py` object is an object created to hold the information of the destination. It contains the postal code, country, alias, latitude, longitude, arrival date, weather, degrees Celsius and kelvin.
+
+The `Tools.py` object is the data center that collects the data received and displayed from the user and the necessary operations that communicate between the Apis and the application. 
+
+When the program runs, it takes the user's name and email information. With this information, it creates an object named Person and assigns values to the relevant fields. 
+
+It inquires whether the user has information about the latitude and longitude of the locations to which they may be traveling. If necessary, it provides information.
+
+In the next step, the user is asked how many locations they want to check and is asked to enter the information (latitude and longitude) according to the answer given. Once these two pieces of information are entered, a method object is used to create a Location object with the information from the Geopy API, assign values to it and show it to the user to verify that the location is where they want to go. If the user confirms the information, the location is added to an array. 
+
+Date information to go to the location is requested. Since Openweather's API requests date information in Unix date format, the data is converted with datetime library. 
+
+With the converted date information, latitude and longitude information, queries are made through the Openweather API and the results are matched to the relevant fields in the location object. 
+
+This data is shown to the user after completing the steps for all relevant locations. If this data is to be sent as an e-mail, it is ensured that it is sent with the relevant methods in the email library and TLS security. 
+
+
+
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
