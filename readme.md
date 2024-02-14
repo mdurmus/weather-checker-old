@@ -21,7 +21,6 @@ All you have to do is specify the locations you want to go to. Weather Checker w
 <ul>
 <li>To enable its users to easily access the information they want.</li>
 <li>Providing users with an easy-to-use application.</li>
-<li></li>
 </ul>
 
 <h2>User Benefits</h2>
@@ -34,7 +33,13 @@ The program helps users save time and resources. They can create their travel ro
 
 Users receive personalized services through the program. They can easily manage their travel plans by receiving travel route and weather information via email. This helps users keep their travel plans updated and makes their travel experience smoother.
 
-Translated with DeepL.com (free version)
+<h2>Logic Flow</h2>
+
+Starting to design my project with a flowchart has helped me a lot. First, these diagrams helped me understand my code better and simplify complex logic. The flow of logic with visually represented figures helped me to see the operations more clearly and better understand how the code works. Secondly, the flowcharts made it easier for me to identify potential error points and get through the debugging process more easily.
+
+**There may be some differences because I drew the flowchart before I started my project.**
+
+<img src="docs/images/charts.webp" alt="Weather Checker Flow Charts">
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
