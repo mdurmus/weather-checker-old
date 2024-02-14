@@ -65,7 +65,24 @@ The email address entered by the user is checked with a regex structure. In case
 
 <img src="docs/images/email_validation.webp" alt="Email Validation">
 
+When you enter your name and email address correctly, the user object will be created and then it will continue its process. 
+
 ### Maps Help Section
+
+After the user has provided the required information, he/she has to report his/her location in order to get the weather information of the destination, which is the main purpose of the program. If he/she does not have this information, we provide information on how to access this information. If he indicates that he would like to get help: 
+
+<img src="docs/images/maps_tip.webp" alt="Maps Tip">
+
+If the user asks for help, an explanation of how to use the Google Maps service and a link to help will be displayed.
+
+<img src="docs/images/help_screen.webp" alt="Maps Tip">
+
+If the user does not ask for help, the program will ask how many cities they would like to receive a report about.
+
+<img src="docs/images/no_help.webp" alt="Maps Tip">
+
+
+
 
 
 isalpha -> https://www.codecademy.com/resources/docs/python/strings/isalpha
