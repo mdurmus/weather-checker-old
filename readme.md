@@ -262,4 +262,4 @@ The site is now live and operational.
 ## Acknowledgments
 The Code Institute slack community for their quick responses and very helpful feedback!
 
-Many thanks to the user [AliOKeeffe](https://github.com/AliOKeeffe/word-Py?tab=readme-ov-file), whose resources I have used extensively during the preparation of this file. 
+Many thanks to the user [AliOKeeffe](https://github.com/AliOKeeffe/word-Py?tab=readme-ov-file), whose resources I have used extensively during the preparation of this file.

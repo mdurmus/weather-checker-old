@@ -28,6 +28,7 @@ def get_name():
                   ' and one word!')
             print()
 
+
 def get_email():
     '''
     Method that allows the user to enter a valid email
@@ -67,6 +68,21 @@ def show_map_hint():
     print('Good sound!')
 
 
+def get_valid_date():
+    '''
+    User must input valid date string
+    '''
+    
+    
+    reg_pattern = r'^\d{4}-\d{2}-\d{2}$'
+    while True:
+        user_input = input('Enter arrival date (YYYY-MM-DD): ')
+        if re.fullmatch(reg_pattern,user_input):
+            return user_input
+        else:
+            print('Invalid date format. Please enter in \'YYYY-MM-DD\' format.')
+
+
 def get_location_information(location_count):
     '''
     Method that gets the city information to be added 
@@ -83,7 +99,7 @@ def get_location_information(location_count):
         location_data = get_latitude_longitude(i)
         name = f'{i + 1}'
         print()
-        arrival_date = input('Enter arrival date (YYYY - MM - DD): ')
+        arrival_date = get_valid_date() 
         # I converted the date because the Openweather 
         # API works with unix datetime.
         time_stamp = convert_date_time(arrival_date)
